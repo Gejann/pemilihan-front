@@ -1,8 +1,6 @@
 let selectedOption = null;
 
 
-
-
 // Event listener untuk opsi
 document.querySelectorAll('.option').forEach(option => {
     option.addEventListener('click', function() {
