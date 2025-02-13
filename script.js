@@ -14,7 +14,7 @@ document.querySelectorAll('.option').forEach(option => {
 // Function untuk update hasil
 async function updateResults() {
     try {
-        const response = await fetch(`${API_URL}/api/results`);
+        const response = await fetch(`${'https://pemilihan-backend-1.onrender.com'}/api/results`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -56,7 +56,7 @@ async function submitVote() {
     };
 
     try {
-        const response = await fetch(`${API_URL}/api/vote`, {
+        const response = await fetch(`${'https://pemilihan-backend-1.onrender.com'}/api/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
