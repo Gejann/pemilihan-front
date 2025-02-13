@@ -129,7 +129,7 @@ async function submitVote() {
     };
 
     try {
-        const response = await fetch('/api/vote', {
+        const response = await fetch(`$('https://pemilihan-backend-1.onrender.com')/api/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
