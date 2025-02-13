@@ -1,4 +1,5 @@
 let selectedOption = null;
+const API_URL = 'https://pemilihan-backend-1.onrender.com'
 
 // Event listener untuk opsi
 document.querySelectorAll('.option').forEach(option => {
@@ -14,7 +15,7 @@ document.querySelectorAll('.option').forEach(option => {
 // Function untuk update hasil
 async function updateResults() {
     try {
-        const response = await fetch(`${'https://pemilihan-backend-1.onrender.com'}/api/results`);
+        const response = await fetch(`${API_URL}/api/results`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -56,7 +57,7 @@ async function submitVote() {
     };
 
     try {
-        const response = await fetch(`${'https://pemilihan-backend-1.onrender.com'}/api/vote`, {
+        const response = await fetch(`${API_URL}/api/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -129,7 +130,7 @@ async function submitVote() {
     };
 
     try {
-        const response = await fetch(`$('https://pemilihan-backend-1.onrender.com')/api/vote`, {
+        const response = await fetch(`${API_URL}/api/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
