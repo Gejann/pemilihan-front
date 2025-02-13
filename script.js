@@ -1,33 +1,5 @@
 let selectedOption = null;
-
-const API_URL = process.env.API_URL || 'https://pemilihan-backend.onrender.com';
-
-// Modify all fetch calls to use API_URL
-async function updateResults() {
-    try {
-        const response = await fetch(`${API_URL}/api/results`);
-        // Rest of the code remains the same
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-
-async function submitVote() {
-    // ... existing code ...
-    try {
-        const response = await fetch(`${API_URL}/api/vote`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-        // Rest of the code remains the same
-    } catch (error) {
-        console.error('Error:', error);
-        showModal('Terjadi kesalahan!', 'error');
-    }
-}
+const API_URL = process.env.API_URL || 'https://pemilihan-backend-1.onrender.com';
 
 // Event listener untuk opsi
 document.querySelectorAll('.option').forEach(option => {
@@ -43,7 +15,7 @@ document.querySelectorAll('.option').forEach(option => {
 // Function untuk update hasil
 async function updateResults() {
     try {
-        const response = await fetch('/api/results');
+        const response = await fetch(`${API_URL}/api/results`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -85,7 +57,7 @@ async function submitVote() {
     };
 
     try {
-        const response = await fetch('/api/vote', {
+        const response = await fetch(`${API_URL}/api/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
