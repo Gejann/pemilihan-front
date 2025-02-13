@@ -1,5 +1,4 @@
 let selectedOption = null;
-const API_URL = process.env.API_URL || 'https://pemilihan-backend-1.onrender.com';
 
 // Event listener untuk opsi
 document.querySelectorAll('.option').forEach(option => {
